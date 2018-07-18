@@ -63,3 +63,18 @@ body {
 	background-color: black;
 	color: white;
 }
+.manager_section { 	
+	width: 700px;
+	margin: auto;
+}
+.manager_section table {
+	margin-top: 20px;
+	padding: 20px;
+	background-color: black;
+	color: white;
+	font-size: 1.1em;
+}
+.manager_section td {
+	padding: 8px 0px;
+	border-bottom: 1px solid #bbb;
+}

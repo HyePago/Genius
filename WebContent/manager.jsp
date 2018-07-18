@@ -19,6 +19,7 @@
 	int[] i = new int[11];
 
 	int[] num = new int[]{1,2,3,4,5,6,8,11,15,17,18};
+	String[] name = new String[]{"김규나", "김나령", "김민영", "김서연", "김승아", "김여경", "김태은", "박신영", "전하영", "채상아", "홍이주"};
 	
 	BufferedReader reader = null;
 	String filePath;
@@ -40,8 +41,12 @@
 			str = reader.readLine();
 			str = reader.readLine();
 			
-			
-			
+			String[] info = str.split("\t");
+			sqi[j] = Integer.parseInt(info[0]);
+			inji[j] = Integer.parseInt(info[1]);
+			cobi[j] = Integer.parseInt(info[2]);
+			sam[j] = Integer.parseInt(info[3]);
+			i[j] = Integer.parseInt(info[4]);
 		} catch(Exception e){
 			e.printStackTrace();
 		}
@@ -50,8 +55,31 @@
 %>
 
 	<section class="manager_section">
-		<table>
-			
+		<table style="text-align: center;">
+			<tr>
+				<th width="80px"> 이름 </th>
+				<th width="150px"> 잔액 </th>
+				<th width="100px"> SQI소프트 </th>
+				<th width="100px"> 인지소프트 </th>
+				<th width="100px"> 코비전 </th>
+				<th width="100px"> SDS </th>
+				<th width="100px"> 아이퀘스트 </th>
+			</tr>
+			<%
+				for(int j=0; j<11; j++){
+			%>
+				<tr>
+					<td> <%= name[j] %> </td>
+					<td style="color: yellow;"> <%= money[j] %> </td>
+					<td> <%= sqi[j] %> </td>
+					<td> <%= inji[j] %> </td>
+					<td> <%= cobi[j] %> </td>
+					<td> <%= sam[j] %> </td>
+					<td> <%= i[j] %> </td>
+				</tr>
+			<%
+				}
+			%>
 		</table>
 	</section>
 </body>
