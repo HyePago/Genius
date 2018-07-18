@@ -12,7 +12,7 @@
 <title>폭풍의 증권시장</title>
 </head>
 <body>
-	<form method="post" action="add.jsp">
+	<form method="post" action="add.jsp" name="myForm" id="myForm">
 		<nav class="main_nav">
 			<font color="white" size="3.8em">
 				<input type="radio" value="1" name="number" checked="checked">김규나&nbsp;
@@ -86,12 +86,18 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="submit" value="구매" class="main_btn" style="width: 130px; height: 40px; text-align: center; padding: 0;"> <input type="button" style="width: 130px; height: 40px; text-align: center;padding: 0;" value="판매" class="main_btn">
+							<input type="submit" value="구매" class="main_btn" style="width: 130px; height: 40px; text-align: center; padding: 0;"> <input type="button" style="width: 130px; height: 40px; text-align: center;padding: 0;" value="판매" class="main_btn" onclick="javascript:sale_click()">
 						</td>
 					</tr>
 				</table>
 			</div>
 		</section>
 	</form>
+	<script>
+		function sale_click() {
+			document.getElementById("myForm").action = "sale.jsp";
+			document.getElementById("myForm").submit();
+		}
+	</script>
 </body>
 </html>
